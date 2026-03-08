@@ -1,25 +1,54 @@
-# YouTube Music Discord Rich Presence
+# 🎵 YouTube Music Discord Rich Presence
 
-A polished Windows project that shows the song currently playing on **YouTube Music** in **Discord Rich Presence**, with album art, playback progress, startup support, optional system tray mode, and executable build support.
+<p align="center">
+  <img src="https://i.imgur.com/9vfpwa1.png" width="700">
+</p>
+
+<p align="center">
+Show the song currently playing on <b>YouTube Music</b> directly in your <b>Discord Rich Presence</b>.
+</p>
+
+<p align="center">
+
+![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
+![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
+</p>
 
 ---
 
-## Features
+## ✨ Overview
 
-- Detects the currently playing track from Windows media sessions
-- Updates Discord Rich Presence in near real time
-- Shows title, artist, album, and playback progress
-- Tries to fetch album art automatically
-- Supports silent startup on Windows boot
-- Includes an optional tray application
-- Includes PyInstaller build script for `.exe` packaging
-- Includes multilingual installation guides
+**YouTube Music Discord Rich Presence** is a Windows application that detects the song currently playing on **YouTube Music** and shows it in **Discord Rich Presence**.
+
+It automatically updates your Discord status with:
+
+- Song title
+- Artist
+- Album artwork
+- Playback progress
+
+The application is lightweight and designed to run quietly in the background.
 
 ---
 
-## Project Structure
+## 🚀 Features
 
-```text
+- Detects the currently playing track from Windows media sessions  
+- Updates Discord Rich Presence in near real time  
+- Displays song title, artist, album and playback progress  
+- Attempts to automatically fetch album artwork  
+- Supports silent startup on Windows boot  
+- Optional system tray application  
+- Includes PyInstaller build script for `.exe` packaging  
+- Multilingual installation guides included  
+
+---
+
+## 📁 Project Structure
+
+```
 youtube-music-discord-rpc/
 ├─ src/
 │  └─ youtube_music_rpc/
@@ -29,13 +58,16 @@ youtube-music-discord-rpc/
 │     ├─ main.py
 │     ├─ rpc.py
 │     └─ tray_app.py
+│
 ├─ scripts/
 │  └─ run_hidden.vbs
+│
 ├─ docs/
 │  ├─ INSTALL.de.md
 │  ├─ INSTALL.en.md
 │  ├─ INSTALL.es.md
 │  └─ INSTALL.tr.md
+│
 ├─ .gitignore
 ├─ build_exe.bat
 ├─ config.example.json
@@ -47,96 +79,115 @@ youtube-music-discord-rpc/
 
 ---
 
-## Quick Start
+# ⚡ Quick Start
 
-### 1. Clone the repository
+## 1. Clone the repository
 
-```bash
+```
 git clone https://github.com/monstercantaliadam/youtube-music-discord-rpc.git
 cd youtube-music-discord-rpc
 ```
 
-### 2. Create a virtual environment
+---
 
-```bash
+## 2. Create a virtual environment
+
+```
 python -m venv .venv
 .venv\Scripts\activate
 ```
 
-### 3. Install dependencies
+---
 
-```bash
+## 3. Install dependencies
+
+```
 pip install -r requirements.txt
 ```
 
-### 4. Copy configuration
+---
 
-```bash
+## 4. Create configuration file
+
+```
 copy config.example.json config.json
 ```
 
-### 5. Run the app
+---
 
-```bash
+## 5. Run the application
+
+```
 python src\youtube_music_rpc\main.py
 ```
 
----
-
-## Discord Setup
-
-You can use the default Client ID already included in `config.example.json`, or create your own application:
-
-1. Open the Discord Developer Portal.
-2. Create a new application.
-3. Copy your **Client ID**.
-4. Put it into `config.json`.
-5. Optionally upload your own Rich Presence assets.
-
-Recommended asset keys:
-
-- `youtube_music`
-- your own custom artwork names if you want stricter branding control
+When a song plays on YouTube Music, your **Discord Rich Presence** will update automatically.
 
 ---
 
-## Windows Startup
+# 🎮 Discord Setup
 
-To make the project launch silently when Windows starts:
+You can use the default Client ID already included in `config.example.json`, or create your own Discord application.
 
-```bash
+Steps:
+
+1. Open the **Discord Developer Portal**
+2. Create a new application
+3. Copy the **Client ID**
+4. Put it into `config.json`
+5. Optionally upload custom Rich Presence assets
+
+Recommended asset key:
+
+```
+youtube_music
+```
+
+---
+
+# 🖥 Windows Startup
+
+To make the application launch automatically when Windows starts:
+
+```
 python setup_startup.py
 ```
 
-This creates a shortcut in the Windows Startup folder that runs the VBS launcher.
+This creates a shortcut in the **Windows Startup folder** that runs the application silently.
 
 ---
 
-## Tray Application
+# 📌 Tray Application
 
 To launch the optional tray version:
 
-```bash
+```
 python src\youtube_music_rpc\tray_app.py
 ```
 
-This starts the service and adds a small tray icon so you can start, stop, or quit it without a terminal window glaring at you like an angry robot.
+This adds a small tray icon that allows you to start, stop or exit the service without keeping a terminal window open.
 
 ---
 
-## Build EXE
+# 📦 Build EXE
 
 To build a standalone Windows executable:
 
-```bat
+```
 build_exe.bat
 ```
 
-Generated output will be placed in the `dist/` folder.
+The compiled executable will appear in the:
+
+```
+dist/
+```
+
+folder.
 
 ---
 
-## Configuration
+# ⚙ Configuration
 
 Example `config.json`:
 
@@ -157,25 +208,25 @@ Example `config.json`:
 
 ---
 
-## Notes
+# 📚 Documentation
 
-- This project is intended for **Windows** because it uses Windows media session APIs.
-- Discord must be running for Rich Presence updates to work.
-- Some media sessions depend on the browser and tab state, because software likes to be dramatic.
+Installation guides are available in multiple languages:
 
----
-
-## Documentation
-
-Multilingual installation guides are available here:
-
-- [English](docs/INSTALL.en.md)
-- [Türkçe](docs/INSTALL.tr.md)
-- [Deutsch](docs/INSTALL.de.md)
-- [Español](docs/INSTALL.es.md)
+- English → `docs/INSTALL.en.md`
+- Türkçe → `docs/INSTALL.tr.md`
+- Deutsch → `docs/INSTALL.de.md`
+- Español → `docs/INSTALL.es.md`
 
 ---
 
-## License
+# ⚠ Notes
+
+- This project is designed specifically for **Windows** because it uses Windows Media Session APIs.
+- Discord must be running for Rich Presence updates to appear.
+- Media detection depends on the browser and tab state.
+
+---
+
+# 📜 License
 
 This project is released under the **MIT License**.
