@@ -1,0 +1,22 @@
+{
+  "client_id": "1474703271959465994",
+  "poll_interval_seconds": 15,
+  "supported_apps": [
+    "youtube",
+    "chrome",
+    "msedge",
+    "opera",
+    "firefox",
+    "brave",
+    "vivaldi",
+    "yandex",
+    "music"
+  ],
+  "buttons": {
+    "enabled": true,
+    "label": "Listen on YouTube Music"
+  },
+  "logging": {
+    "level": "INFO"
+  }
+}
